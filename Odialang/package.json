@@ -1,0 +1,22 @@
+{
+  "name": "odialang",
+  "module": "index.ts",
+  "description": "An Odia-style programming language that compiles to JavaScript",
+  "type": "module",
+  "private": true,
+   "bin": {
+    "odia": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "bun run src/cli/index.ts",
+    "start": "bun run src/cli/index.ts",
+    "link": "bun link"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
