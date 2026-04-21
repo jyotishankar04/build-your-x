@@ -1,0 +1,27 @@
+# Example 1: FizzBuzz
+# Classic programming interview question
+# Using logical operators (&&) and modulo (%)
+
+karya fizzBuzz(n)
+  jadi n % 3 == 0 && n % 5 == 0 tahale
+    dekha "FizzBuzz"
+  sesa
+
+  jadi n % 3 == 0 tahale
+    dekha "Fizz"
+  sesa
+
+  jadi n % 5 == 0 tahale
+    dekha "Buzz"
+  sesa
+
+  jadi n % 3 != 0 && n % 5 != 0 tahale
+    dekha n
+  sesa
+sesa
+
+# Print FizzBuzz for 1-20
+dekha "=== FizzBuzz ==="
+aarambha i = 1 ru 20
+  fizzBuzz(i)
+sesa

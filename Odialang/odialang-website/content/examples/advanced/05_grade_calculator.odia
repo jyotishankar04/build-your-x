@@ -1,0 +1,89 @@
+# Example 5: Grade Calculator
+# Complete student grading system with logical operators
+
+# Function to calculate grade based on marks
+karya calculateGrade(marks)
+  jadi marks >= 90 tahale
+    fera "A+"
+  sesa
+  
+  jadi marks >= 80 tahale
+    fera "A"
+  sesa
+  
+  jadi marks >= 70 tahale
+    fera "B"
+  sesa
+  
+  jadi marks >= 60 tahale
+    fera "C"
+  sesa
+  
+  jadi marks >= 50 tahale
+    fera "D"
+  sesa
+  
+  fera "F"
+sesa
+
+# Function to check pass/fail using logical AND (&&)
+karya hasPassed(m1, m2, m3, m4, m5)
+  jadi m1 >= 50 && m2 >= 50 && m3 >= 50 && m4 >= 50 && m5 >= 50 tahale
+    fera sata
+  nahele
+    fera micha
+  sesa
+sesa
+
+# Calculate total and average
+karya calcAverage(m1, m2, m3, m4, m5)
+  dhara total = m1 + m2 + m3 + m4 + m5
+  fera total / 5
+sesa
+
+# Student 1: Excellent performance
+dekha "========================================"
+dekha "          STUDENT REPORT CARD"
+dekha "========================================"
+dhara name1 = "Rama Das"
+dhara m1 = 92
+dhara m2 = 88
+dhara m3 = 85
+dhara m4 = 90
+dhara m5 = 87
+dhara avg1 = calcAverage(m1, m2, m3, m4, m5)
+dekha "Name: " + name1
+dekha "Average: " + avg1 + "%"
+dekha "Overall Grade: " + calculateGrade(avg1)
+dekha "All subjects passed: " + hasPassed(m1, m2, m3, m4, m5)
+dekha "========================================"
+
+# Student 2: Failed in one subject
+dekha ""
+dekha "========================================"
+dekha "          STUDENT REPORT CARD"
+dekha "========================================"
+dhara name2 = "Gita Mohanty"
+dhara s1 = 45
+dhara s2 = 78
+dhara s3 = 82
+dhara s4 = 75
+dhara s5 = 80
+dhara avg2 = calcAverage(s1, s2, s3, s4, s5)
+dekha "Name: " + name2
+dekha "Average: " + avg2 + "%"
+dekha "Overall Grade: " + calculateGrade(avg2)
+dekha "All subjects passed: " + hasPassed(s1, s2, s3, s4, s5)
+dekha "========================================"
+
+# Class statistics using logical operators
+dekha ""
+dekha "=== CLASS STATISTICS ==="
+dhara totalStudents = 4
+dhara passCount = 3
+dhara failCount = 1
+dhara passPercentage = (passCount * 100) / totalStudents
+dekha "Total Students: " + totalStudents
+dekha "Passed: " + passCount
+dekha "Failed: " + failCount
+dekha "Pass Percentage: " + passPercentage + "%"

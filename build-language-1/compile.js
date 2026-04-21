@@ -140,7 +140,7 @@ function runner(exe) {
 
 const code = `
 ye x = 10
-ye y = 40
+ye y = 45
 ye sum = x + y
 bol sum
 `;
