@@ -1,0 +1,40 @@
+name: Auto-Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: 'Stable commit SHA to rollback to'
+        required: true
+        default: 'b9364967d5b3c2df5cf210f8d2d2c380bc9566b2'
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge stable commit
+        run: |
+          echo "Rolling back to commit: ${{ github.event.inputs.commit_sha }}"
+          git config user.name "XecureCode Bot"
+          git config user.email "bot@xecurecode.in"
+          git fetch origin main
+          git merge ${{ github.event.inputs.commit_sha }} --no-ff -m "Auto-rollback: Revert to stable commit ${{ github.event.inputs.commit_sha }}"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify deployment platform
+        run: |
+          echo "Deployment should be triggered automatically by the merge to main"
+          echo "Check your deployment dashboard (Render/Vercel/etc.) for status"
