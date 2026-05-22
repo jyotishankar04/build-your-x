@@ -6,7 +6,7 @@ on:
       commit_sha:
         description: 'Stable commit SHA to rollback to'
         required: true
-        default: 'b9364967d5b3c2df5cf210f8d2d2c380bc9566b2'
+        default: '4e1a42b3cdd2c6e15ec36d338892cf193c6a6962'
 
 jobs:
   rollback:
